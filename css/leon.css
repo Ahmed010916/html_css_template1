@@ -1,0 +1,496 @@
+/* Start variables */
+:root {
+    --main-color:#10cab7;
+}
+/* End variables */
+
+
+/* Start Global Rules */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*  Small devices  */
+@media (min-width: 576px) { 
+    .container {
+        width: 540px;
+    }
+}
+
+/* Medium devices */
+@media (min-width: 768px) {  
+    .container {
+        width: 730px;
+    }
+}
+
+/* Large devices */
+@media (min-width: 992px) {  
+    .container {
+        width: 960px;
+    }
+}
+
+/* X-Large devices */
+@media (min-width: 1200px) {  
+    .container {
+        width: 1140px;
+    }
+}
+
+/* XX-Large devices */
+@media (min-width: 1400px) {  
+    .container {
+        width: 1440px;
+    }
+}
+
+/* End Global Rules */
+/* Start Global Componet */
+
+.special-header {
+    text-align: center;
+    font-size: 90px;
+    font-weight: 900;
+    letter-spacing: -3px;    
+    color: #eee;
+    margin: 0;
+}
+.special-header + p {
+    text-align: center;
+    font-size: 19px;
+    color: #555;
+    margin: -30px 0 0 0;
+}
+
+
+
+/* End Global Componet */
+
+
+/* Start Nav */
+
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .container .logo {
+    width: 60px;
+    margin: 20px 0;
+}
+
+nav .container .menu {
+    position: relative;
+}
+
+nav .container .menu:hover::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -12px;    
+    border: 10px solid;
+    border-color:  transparent transparent #eee transparent;
+}
+
+nav .container .menu:hover .links{
+    display: block;
+}
+
+nav .container .menu .links {
+    display: none;
+    position: absolute;
+    left: -180px;
+    top: 40px;
+    background-color: #f6f6f6;
+    width: 200px;
+    z-index: 1;
+}
+
+nav .container .menu .links ul {
+    list-style: none;
+    margin:  0;
+    padding: 0;
+}
+
+
+nav .container .menu .links ul li{
+    padding: 10px;
+}
+
+nav .container .menu .links ul li:not(:last-child) {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+nav .container .menu .links ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+nav .container .menu .links ul li:hover a {
+    padding: 0 0 0 10px;
+}
+
+/* end Nav */
+
+/* start section header */
+
+.section-header {
+    height: calc(100vh - 65px);
+    background-image: url('../image/landing.jpg');
+    background-size: cover;
+    position: relative;
+    text-align: center;
+}
+
+.section-header .content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.section-header .content h1 {
+    margin: 0px -20px;    
+    color: var(--main-color);
+    font-size: 50px;
+}
+
+.section-header .content p { 
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.features {
+    background-color: rgb(248, 248, 248);
+}
+
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr)) ;
+    gap: 20px;
+}
+
+.features .container div{
+    text-align: center;
+    margin: 50px 0;
+    line-height: 1.8;
+}
+
+.features .container div svg{
+    color: var(--main-color);
+    height: 70px;
+    width:  70px;
+}
+
+.features .container div h3{
+    font-size: 19px;
+    color: #333;
+    font-weight: 800;
+}
+.features .container div p{
+    font-size: 17px;
+    color: #777777;
+    padding: 0px 28px;
+}
+/* end section header */
+
+/* Start services */
+.services {
+    margin: 60px 30px;
+}
+
+.services .container section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 20px;
+    margin: 60px 0;
+}
+
+.services .container section .col:last-child{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.services .container section .col img{
+    height: 100%;
+    width: 250px;
+}
+
+.services .container section .col:last-child::before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    right: 61px;
+    height: 100%;
+    background-color: #2c4856;
+    z-index: -1;
+}
+
+.services .container section .col:last-child::after {
+    content: "";
+    position: absolute;
+    width: 110px;
+    right: 61px;
+    bottom: -20px;
+    height: 50px;
+    background-color: #2c4856;
+}
+
+@media (max-width: 1200px) {  
+    .services .container section .col:last-child {
+        display: none;
+    }
+}
+
+.services .container section .col .serv .head {
+    display: flex;
+    align-items: center;
+}
+
+.services .container section .col .serv .head svg{
+    font-size: 20px;
+    color: var(--main-color);
+    margin: 0 20px 0 0;
+}
+
+.services .container section .col .serv .head h3{
+    font-size: 20px;
+    font-weight: bold;  
+    margin: 5px 0;  
+}
+
+.services .container section .col .serv p{
+    font-size: 17px;
+    color: #777777;
+    line-height: 1.6;
+    
+}
+
+@media (max-width: 767px) {  
+    .services  {
+        text-align: center;
+    }
+
+    .services .container section .col .serv .head {
+
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1400px) {  
+    .services .container section .col:last-child::before,
+    .services .container section .col:last-child::after {
+        right: 170px;  
+    }
+}
+
+
+/* End services */
+
+
+ /* Start Portfolio */
+.portfolio {
+    background-color: #f6f6f6;
+    padding: 60px 0;
+}
+
+.portfolio .container .section{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 30px;
+}
+
+.portfolio .container .section .card{
+    padding: 0px 0 10px 0;
+    background-color: #fff;
+}
+
+.portfolio .container .section .card img{
+    height: 250px;
+    width: 100%;
+    background-size: cover;
+}
+
+.portfolio .container .section .card .card-header,
+.portfolio .container .section .card .card-body{
+    padding: 15px;
+}
+
+.portfolio .container .section .card .card-header {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.portfolio .container .section .card .card-body {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgb(119, 119, 119);
+}
+
+ /* End  Portfolio */
+
+
+/* Start  About  */
+
+.about {
+    margin: 60px;
+}
+
+.about .container .about-content{
+    margin-top: 60px;
+    display: flex;
+    gap: 30px;
+}
+
+.about .container .about-content .col-img {
+    width: 500px;    
+    margin-right: 150px;
+    position: relative;
+}
+
+.about .container .about-content .col-img::after {
+    content: "";
+    width: 70px;
+    height: 100%;
+    position: absolute;
+    background-color: var(--main-color);
+    z-index: -1;
+    right: -20px;
+    top: -30px;
+}
+
+.about .container .about-content .col-img::before {
+    content: "";
+    width: 70px;
+    height: 100%;
+    position: absolute;
+    background-color: #ccc;
+    left: -20px;
+    bottom: -23px;
+    z-index: -1;
+}
+
+.about .container .about-content .col-img img{
+    width: 100%;
+}
+
+.about .container .about-content .col-content{
+    line-height: 1.8;
+    font-size: 17;
+    padding-right: 40px;
+}
+
+.about .container .about-content .col-content .hr{
+    width: 55%;
+    height: 3px;
+    margin: 30px 0;
+    background-color: var(--main-color);
+}
+
+
+.about .container .about-content .col-content .last{
+    color: #777777;
+}
+
+
+.about .container .about-content .col-content .first{
+    color: black;
+    font-weight: bold;
+}
+
+
+@media (max-width: 991px) {  
+    .about .container .about-content .col-img {
+        display: none;
+    }
+}
+
+/* End  About  */
+
+/* Start  Contact */
+
+.contact {
+    padding-top: 60px;
+    background-color: #f6f6f6;
+}
+
+
+.contact .container .special-header + p {
+    margin-bottom: 80px;
+}
+
+.contact .container .contact-content {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.contact .container .contact-content h2 {
+    color: #2c4755;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+.contact .container .contact-content h3 {
+    color: var(--main-color);
+    font-weight: 800;
+    font-size: 25px;
+
+}
+.contact .container .contact-content .social {
+    color: #2b404b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* End  Contact */
+
+
+
+/* Start Footer */
+
+footer {
+    background-color: #2b404b;
+    padding: 20px 0;
+}
+
+footer .container .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+
+}
+
+footer .container .row p span{
+
+    color: var(--main-color);
+
+}
+
+/* End Footer */
